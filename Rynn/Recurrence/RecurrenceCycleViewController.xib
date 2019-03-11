@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecurrenceCycleViewController" customModule="Rynn" customModuleProvider="target">
+            <connections>
+                <outlet property="tblRecurrenceSelection" destination="RVN-b3-BFy" id="bpc-uY-Rve"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBm-3w-b6a">
+                    <rect key="frame" x="0.0" y="20" width="320" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Recurrence Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vef-yB-MBx">
+                            <rect key="frame" x="61.5" y="11.5" width="197.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.2221100926" green="0.26630166170000003" blue="0.2955542505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Bq2-YK-vxw"/>
+                        <constraint firstItem="Vef-yB-MBx" firstAttribute="centerY" secondItem="XBm-3w-b6a" secondAttribute="centerY" id="hy3-Kj-zro"/>
+                        <constraint firstItem="Vef-yB-MBx" firstAttribute="centerX" secondItem="XBm-3w-b6a" secondAttribute="centerX" id="qmQ-Ps-nQS"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVN-b3-BFy">
+                    <rect key="frame" x="15" y="75" width="290" height="478"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9ml-9a-hpB"/>
+                        <outlet property="delegate" destination="-1" id="z2O-02-ChD"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XBm-3w-b6a" secondAttribute="trailing" id="KPC-7M-JjR"/>
+                <constraint firstItem="XBm-3w-b6a" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MAs-4k-zsj"/>
+                <constraint firstItem="XBm-3w-b6a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rae-pj-NPo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RVN-b3-BFy" secondAttribute="trailing" constant="15" id="UzR-xk-wK4"/>
+                <constraint firstItem="RVN-b3-BFy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="YTq-dI-FrC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RVN-b3-BFy" secondAttribute="bottom" constant="15" id="bfp-QI-64H"/>
+                <constraint firstItem="RVN-b3-BFy" firstAttribute="top" secondItem="XBm-3w-b6a" secondAttribute="bottom" constant="15" id="oMG-W3-ddn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
