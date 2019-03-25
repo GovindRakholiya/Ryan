@@ -493,12 +493,12 @@ class ChartsAndReportsViewController: UIViewController {
         var dayComponent = DateComponents()
         var expenseArrayCheck : [expense] = [expense]()
        
-        var totalDays : Int = 30
+        var totalDays : Int = Date().getDaysInMonth()
         if (currentIndex == 1){
             totalDays = 7
             lblBudgetType.text = "Weekly Budget"
         }else if (currentIndex == 2){
-            totalDays = 30
+            totalDays = Date().getDaysInMonth()
             lblBudgetType.text = "Monthly Budget"
         }
         else if (currentIndex == 3){
@@ -736,3 +736,19 @@ extension Calendar {
 }
 
 
+
+extension Date {
+    
+    func getDaysInMonth() -> Int{
+        let calendar = Calendar.current
+        
+        let dateComponents = DateComponents(year: calendar.component(.year, from: self), month: calendar.component(.month, from: self))
+        let date = calendar.date(from: dateComponents)!
+        
+        let range = calendar.range(of: .day, in: .month, for: date)!
+        let numDays = range.count
+        
+        return numDays
+    }
+    
+}

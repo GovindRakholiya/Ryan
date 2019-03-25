@@ -48,6 +48,11 @@ class MyAccountViewController: UIViewController,MFMailComposeViewControllerDeleg
         isEdit = false
     }
     
+    @IBAction func btnExploreBarChartPressed(_ sender: Any) {
+        let barChartVC = BarChartReportViewController(nibName: "BarChartReportViewController", bundle: nil)
+        
+        self.navigationController?.pushViewController(barChartVC, animated: false)
+    }
     
     func configureMailComposer() -> MFMailComposeViewController{
         let mailComposeVC = MFMailComposeViewController()

@@ -121,6 +121,8 @@
 		41D6BF7C219E862600D2CA1E /* EarningListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411A2472217290D200ECE266 /* EarningListViewController.xib */; };
 		41D6BF7D219E862600D2CA1E /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41A49E1E2153CCA2007B8A0D /* RobotoMono-Regular.ttf */; };
 		41E19FA721D4E40E00DE0E2F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E19FA621D4E40E00DE0E2F /* SwiftyJSON.framework */; };
+		B8D7FFB22248CF5400925620 /* BarChartReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */; };
+		B8D7FFB32248CF5400925620 /* BarChartReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */; };
 		FE57B2EACDD1DDC31668A214 /* Pods_BUILD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +283,8 @@
 		41E19FA621D4E40E00DE0E2F /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EB9F55215F96030038F110 /* AccountAPIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIManger.swift; sourceTree = "<group>"; };
 		B172D48C2329689D1E3F04D9 /* Pods-BUILD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUILD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BUILD/Pods-BUILD.release.xcconfig"; sourceTree = "<group>"; };
+		B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartReportViewController.swift; sourceTree = "<group>"; };
+		B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartReportViewController.xib; sourceTree = "<group>"; };
 		D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUILD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -709,6 +713,8 @@
 			children = (
 				419A290121786B5500F756FA /* ChartsAndReportsViewController.swift */,
 				419A290221786B5500F756FA /* ChartsAndReportsViewController.xib */,
+				B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */,
+				B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */,
 			);
 			path = ChartsAndReports;
 			sourceTree = "<group>";
@@ -885,6 +891,7 @@
 				41D6BF65219E862600D2CA1E /* ViewSort.xib in Resources */,
 				41D6BF67219E862600D2CA1E /* Roboto-Italic.ttf in Resources */,
 				41D6BF68219E862600D2CA1E /* RobotoMono-Medium.ttf in Resources */,
+				B8D7FFB32248CF5400925620 /* BarChartReportViewController.xib in Resources */,
 				41D6BF69219E862600D2CA1E /* RecurrenceCycleViewController.xib in Resources */,
 				41D6BF6A219E862600D2CA1E /* Roboto-Medium.ttf in Resources */,
 				41D6BF6B219E862600D2CA1E /* ExpenseTableViewCell.xib in Resources */,
@@ -1042,6 +1049,7 @@
 				41D6BF36219E862600D2CA1E /* ChangePasswordViewController.swift in Sources */,
 				41D6BF37219E862600D2CA1E /* FMDatabaseQueue.m in Sources */,
 				41D6BF38219E862600D2CA1E /* EarningListViewController.swift in Sources */,
+				B8D7FFB22248CF5400925620 /* BarChartReportViewController.swift in Sources */,
 				41D6BF39219E862600D2CA1E /* Reachability.swift in Sources */,
 				41D6BF3A219E862600D2CA1E /* UIImage+Alpha.m in Sources */,
 				41D6BF3B219E862600D2CA1E /* UITextField+Paddingview.swift in Sources */,
