@@ -44,6 +44,7 @@ class ChartMarker: MarkerView {
 
 
 class BarChartReportViewController: UIViewController,ChartViewDelegate {
+    @IBOutlet weak var lblNoDataAvailable: UILabel!
     
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var viewStartDate: UIView!
@@ -395,6 +396,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
 //        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0]
 //        let unitsBought = [10.0, 14.0, 60.0, 13.0, 2.0]
         
+        
         //legend
         let legend = chartForbarView.legend
         legend.enabled = true
@@ -410,7 +412,9 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         let yaxis = chartForbarView.leftAxis
         yaxis.spaceTop = 0.35
         yaxis.axisMinimum = 0
-        yaxis.drawGridLinesEnabled = true
+        yaxis.drawGridLinesEnabled = false
+        
+        
         
         chartForbarView.rightAxis.enabled = false
         
@@ -424,13 +428,15 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         let xaxis = chartForbarView.xAxis
         //xaxis.valueFormatter = axisFormatDelegate
         xaxis.forceLabelsEnabled = true
-        xaxis.drawGridLinesEnabled = true
-        xaxis.labelPosition = .bottom
+        xaxis.drawGridLinesEnabled = false
+        xaxis.labelPosition = .top
         xaxis.centerAxisLabelsEnabled = true
         xaxis.valueFormatter = IndexAxisValueFormatter(values:months)
         xaxis.granularityEnabled = true
         xaxis.granularity = 1
-        xaxis.setLabelCount(dateStringArray.count, force: true)
+        xaxis.setLabelCount(dateStringArray.count, force: false)
+        
+        
         
         var dataEntries: [BarChartDataEntry] = []
         var dataEntries1: [BarChartDataEntry] = []
@@ -449,8 +455,8 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         let chartDataSet1 = BarChartDataSet(values: dataEntries1, label: "Expense")
         
         let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet1]
-        chartDataSet.colors = [UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.5)]
-        chartDataSet1.colors = [UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.8)]
+        chartDataSet.colors = [UIColor(red: 62/255, green: 188/255, blue: 165/255, alpha: 1.0)]
+        chartDataSet1.colors = [UIColor(red: 244/255, green: 121/255, blue: 29/255, alpha: 1.0)]
         
         
         //chartDataSet.colors = ChartColorTemplates.colorful()
@@ -458,7 +464,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         
         let chartData = BarChartData(dataSets: dataSets)
         
-        let groupSpace = 0.5
+        let groupSpace = 1.0
         let barSpace = 0.03
         let barWidth = groupSpace
         
@@ -466,8 +472,8 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         let groupCount = months.count
         let startYear = 0
         
-        
-        chartForbarView.xAxis.labelRotationAngle = -45.0
+//
+        chartForbarView.xAxis.labelRotationAngle = -90.0
         
         
         chartData.barWidth = barWidth;
@@ -478,10 +484,20 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         
         chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
         
+        if (chartData.entryCount == 0){
+            lblNoDataAvailable.isHidden = false
+        }else{
+            lblNoDataAvailable.isHidden = true
+        }
+        
+        
+        //print(chartData)
         chartForbarView.data = chartData
         
         chartForbarView.setVisibleXRangeMaximum(15)
-        chartForbarView.animate(yAxisDuration: 1.0, easingOption: .easeInOutBounce)
+        chartForbarView.animate(yAxisDuration: 1.0, easingOption: .easeOutSine)
+        
+        chartForbarView.fitBars = true
     }
     func setDatePicker() {
         // Posiiton date picket within a view
@@ -731,6 +747,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         filterViewHeight.constant = 0
         Global.appDelegate.tabBarController.hideTabBar()
         viewDateSelection.isHidden = true

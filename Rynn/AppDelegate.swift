@@ -74,11 +74,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SWRevealViewControllerDele
     
     
     func setNavigation() {
-        let login = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        navigation = UINavigationController(rootViewController: login)
-        navigation?.isNavigationBarHidden = true
-        window?.rootViewController = navigation
-        window?.makeKeyAndVisible()
+//        let login = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        if (Global.kretriUserData().IsLoggedIn!.toBool())  {
+            let login = LoginViewController(nibName: "LoginViewController", bundle: nil)
+            navigation = UINavigationController(rootViewController: login)
+            navigation?.isNavigationBarHidden = true
+            window?.rootViewController = navigation
+            window?.makeKeyAndVisible()
+        }else{
+            let login = introductionViewController(nibName: "introductionViewController", bundle: nil)
+            navigation = UINavigationController(rootViewController: login)
+            navigation?.isNavigationBarHidden = true
+            window?.rootViewController = navigation
+            window?.makeKeyAndVisible()
+        }
+        
         
     }
     

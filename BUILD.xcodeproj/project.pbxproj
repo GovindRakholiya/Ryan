@@ -121,6 +121,9 @@
 		41D6BF7C219E862600D2CA1E /* EarningListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411A2472217290D200ECE266 /* EarningListViewController.xib */; };
 		41D6BF7D219E862600D2CA1E /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41A49E1E2153CCA2007B8A0D /* RobotoMono-Regular.ttf */; };
 		41E19FA721D4E40E00DE0E2F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E19FA621D4E40E00DE0E2F /* SwiftyJSON.framework */; };
+		B8133BD92251DE1A0014ABF8 /* introductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8133BD72251DE1A0014ABF8 /* introductionViewController.swift */; };
+		B8133BDA2251DE1A0014ABF8 /* introductionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8133BD82251DE1A0014ABF8 /* introductionViewController.xib */; };
+		B8133BDE225249900014ABF8 /* SampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8133BDD225249900014ABF8 /* SampleVideo.mp4 */; };
 		B8D7FFB22248CF5400925620 /* BarChartReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */; };
 		B8D7FFB32248CF5400925620 /* BarChartReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */; };
 		FE57B2EACDD1DDC31668A214 /* Pods_BUILD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */; };
@@ -283,6 +286,9 @@
 		41E19FA621D4E40E00DE0E2F /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EB9F55215F96030038F110 /* AccountAPIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIManger.swift; sourceTree = "<group>"; };
 		B172D48C2329689D1E3F04D9 /* Pods-BUILD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUILD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BUILD/Pods-BUILD.release.xcconfig"; sourceTree = "<group>"; };
+		B8133BD72251DE1A0014ABF8 /* introductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introductionViewController.swift; sourceTree = "<group>"; };
+		B8133BD82251DE1A0014ABF8 /* introductionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = introductionViewController.xib; sourceTree = "<group>"; };
+		B8133BDD225249900014ABF8 /* SampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo.mp4; sourceTree = "<group>"; };
 		B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartReportViewController.swift; sourceTree = "<group>"; };
 		B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartReportViewController.xib; sourceTree = "<group>"; };
 		D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUILD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -410,6 +416,8 @@
 		41253296214F72E900784C7C /* Rynn */ = {
 			isa = PBXGroup;
 			children = (
+				B8133BDD225249900014ABF8 /* SampleVideo.mp4 */,
+				B8133BD62251DDED0014ABF8 /* introduction */,
 				410A4F0421D4D17000E42EFC /* InAppPurchase */,
 				410D36C021D3A96E0073B437 /* SelectPlan */,
 				419A290021786B2900F756FA /* ChartsAndReports */,
@@ -762,6 +770,15 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
+		B8133BD62251DDED0014ABF8 /* introduction */ = {
+			isa = PBXGroup;
+			children = (
+				B8133BD72251DE1A0014ABF8 /* introductionViewController.swift */,
+				B8133BD82251DE1A0014ABF8 /* introductionViewController.xib */,
+			);
+			path = introduction;
+			sourceTree = "<group>";
+		};
 		E2192FDC5AF6764767D9A677 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,12 +895,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8133BDA2251DE1A0014ABF8 /* introductionViewController.xib in Resources */,
 				410A4F0321D4C37F00E42EFC /* SelectPlanViewController.xib in Resources */,
 				41D6BF5C219E862600D2CA1E /* Roboto-MediumItalic.ttf in Resources */,
 				41D6BF5D219E862600D2CA1E /* LoginViewController.xib in Resources */,
 				41D6BF5E219E862600D2CA1E /* DashboardViewController.xib in Resources */,
 				41D6BF5F219E862600D2CA1E /* Roboto-Light.ttf in Resources */,
 				41D6BF60219E862600D2CA1E /* ExpenseListViewController.xib in Resources */,
+				B8133BDE225249900014ABF8 /* SampleVideo.mp4 in Resources */,
 				41D6BF61219E862600D2CA1E /* LaunchScreen.storyboard in Resources */,
 				41D6BF62219E862600D2CA1E /* Rynn.db in Resources */,
 				41D6BF63219E862600D2CA1E /* NotificationView.xib in Resources */,
@@ -1043,6 +1062,7 @@
 				41D6BF30219E862600D2CA1E /* UIView+Extra.swift in Sources */,
 				41D6BF31219E862600D2CA1E /* Singleton.swift in Sources */,
 				41D6BF32219E862600D2CA1E /* Date+Extra.swift in Sources */,
+				B8133BD92251DE1A0014ABF8 /* introductionViewController.swift in Sources */,
 				41D6BF33219E862600D2CA1E /* userDetail.swift in Sources */,
 				41D6BF34219E862600D2CA1E /* IPAutoScalingButton.swift in Sources */,
 				41D6BF35219E862600D2CA1E /* ViewSort.swift in Sources */,
