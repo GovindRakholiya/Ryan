@@ -12,6 +12,10 @@ import AVFoundation
 import AVKit
 
 class introductionViewController: UIViewController {
+    
+    @IBOutlet weak var btnSkip: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
+    var isBackButtonNeeded : Bool = false
 
     @IBOutlet weak var btnPlayAgain: UIButton!
     @IBOutlet weak var videoView: UIView!
@@ -43,6 +47,27 @@ class introductionViewController: UIViewController {
 
         initializeVideoPlayerWithVideo()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (Global.appDelegate.tabBarController != nil){
+            Global.appDelegate.tabBarController.hideTabBar()
+        }
+        if (isBackButtonNeeded){
+            btnBack.isHidden = false
+            btnPlayAgain.isHidden = true
+            btnSkip.isHidden = true
+        }else{
+            btnBack.isHidden = true
+            btnPlayAgain.isHidden = false
+            btnSkip.isHidden = false
+        }
+    }
+    
+    @IBAction func btnBackPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    
 
     @IBAction func btnSkipPressed(_ sender: Any) {
         let login = LoginViewController(nibName: "LoginViewController", bundle: nil)

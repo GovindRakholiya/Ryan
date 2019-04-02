@@ -86,6 +86,12 @@ class MyAccountViewController: UIViewController,MFMailComposeViewControllerDeleg
     }
 
     
+    @IBAction func btnIntroductionVideoPressed(_ sender: Any) {
+        let extractedExpr: introductionViewController = introductionViewController(nibName: "introductionViewController", bundle: nil)
+        let introVC = extractedExpr
+        introVC.isBackButtonNeeded = true
+        self.navigationController?.pushViewController(introVC, animated: false)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

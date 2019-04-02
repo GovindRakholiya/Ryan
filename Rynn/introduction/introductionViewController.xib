@@ -17,7 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="introductionViewController" customModule="BUILD" customModuleProvider="target">
             <connections>
+                <outlet property="btnBack" destination="RGV-0C-MEW" id="q3x-S6-VMG"/>
                 <outlet property="btnPlayAgain" destination="1HT-tf-bzI" id="9ne-1x-1Gy"/>
+                <outlet property="btnSkip" destination="FIB-rq-26F" id="9Kf-3p-ZPa"/>
                 <outlet property="videoView" destination="Be1-xy-Hga" id="CqJ-tA-cZF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,7 +31,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Be1-xy-Hga">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.42572623239436619" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIB-rq-26F">
                     <rect key="frame" x="335" y="627" width="30" height="30"/>
@@ -51,13 +53,22 @@
                         <action selector="btnPlayAgainPressed:" destination="-1" eventType="touchUpInside" id="MBQ-ou-kv6"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGV-0C-MEW">
+                    <rect key="frame" x="10" y="30" width="21" height="22"/>
+                    <state key="normal" image="left-arrow"/>
+                    <connections>
+                        <action selector="btnBackPressed:" destination="-1" eventType="touchUpInside" id="SYQ-7k-Lbo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="0.65721280809859151" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="1HT-tf-bzI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="3gn-DH-Y5U"/>
                 <constraint firstItem="Be1-xy-Hga" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DpZ-i5-8zU"/>
+                <constraint firstItem="RGV-0C-MEW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="EWk-S8-4ea"/>
                 <constraint firstAttribute="bottom" secondItem="Be1-xy-Hga" secondAttribute="bottom" id="LoO-QH-3Fq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1HT-tf-bzI" secondAttribute="bottom" constant="10" id="MVD-1y-7Jy"/>
+                <constraint firstItem="RGV-0C-MEW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="OJb-p5-4NH"/>
                 <constraint firstItem="Be1-xy-Hga" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TxY-jm-oec"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FIB-rq-26F" secondAttribute="trailing" constant="10" id="XjR-U4-Wab"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Be1-xy-Hga" secondAttribute="trailing" id="n74-6f-1ER"/>
@@ -67,4 +78,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="left-arrow" width="21" height="21"/>
+    </resources>
 </document>

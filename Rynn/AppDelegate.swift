@@ -83,6 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SWRevealViewControllerDele
             window?.makeKeyAndVisible()
         }else{
             let login = introductionViewController(nibName: "introductionViewController", bundle: nil)
+            login.isBackButtonNeeded = false
             navigation = UINavigationController(rootViewController: login)
             navigation?.isNavigationBarHidden = true
             window?.rootViewController = navigation
