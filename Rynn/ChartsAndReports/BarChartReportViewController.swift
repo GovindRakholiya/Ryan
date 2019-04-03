@@ -134,11 +134,11 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     func addGestureForSwipe() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        self.view.addGestureRecognizer(swipeLeft)
+//        self.view.addGestureRecognizer(swipeLeft)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(swipeRight)
+//        self.view.addGestureRecognizer(swipeRight)
     }
     
     
@@ -463,6 +463,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         
         let xaxis = chartForbarView.xAxis
         //xaxis.valueFormatter = axisFormatDelegate
+        
         xaxis.forceLabelsEnabled = true
         xaxis.drawGridLinesEnabled = false
         xaxis.labelPosition = .bottom
@@ -470,7 +471,13 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         xaxis.valueFormatter = IndexAxisValueFormatter(values:months)
         xaxis.granularityEnabled = true
         xaxis.granularity = 1
-        xaxis.setLabelCount(dateStringArray.count, force: false)
+        xaxis.labelCount = 7
+       
+//        xaxis.setLabelCount(dateStringArray.count, force: true)
+        chartForbarView.fitBars = true
+        
+        
+        
         
         
         var dataEntries: [BarChartDataEntry] = []
@@ -499,7 +506,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         
         let chartData = BarChartData(dataSets: dataSets)
         
-        let groupSpace = 1.0
+        let groupSpace = 0.3
         let barSpace = 0.03
         let barWidth = groupSpace
         
@@ -507,8 +514,8 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         let groupCount = months.count
         let startYear = 0
         
-//
-        chartForbarView.xAxis.labelRotationAngle = -90.0
+////
+//        chartForbarView.xAxis.labelRotationAngle = -45.0
         
         
         chartData.barWidth = barWidth;
@@ -654,7 +661,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     
     func showMonthlyChart(mothlyExpense : [expense])  {
         
-        
+        var dateDisplayArray : [String] = [String]()
         var expense_Array = [expense]()
         var earned_Array = [expense]()
         
@@ -664,6 +671,8 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
             if (dateStringArray.contains(today.expenseDate)){
                 
             }else{
+                let dateToDisplay = today.expenseDate.split(separator: "-")
+                dateDisplayArray.append(dateToDisplay[1].description ?? "")
                 dateStringArray.append(today.expenseDate)
             }
             if (today.isexpense == "1"){
@@ -701,49 +710,10 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
             incomeDoubleValueArray.append(earningOnThatDate)
         }
         
-        
-        setGroupBarChart(months: dateStringArray, unitsSold: incomeDoubleValueArray, unitsBought: expenseDoubleValueArray)
-//        var earnValueCount : Double = 0
-//
-//        for expenseObject in earned_Array {
-//
-//            let earnValue = Double(expenseObject.expenseAmount)
-//            earnValueCount = earnValueCount + earnValue!
-//
-//        }
-//        let totalval = earnValueCount - expenseValueCount
-////        btnDailyBudgetAmount.setTitle("$ \(String(format:"%.2f", totalval))", for: .normal)
-//
-//
-//
-//
-//        var track = ["Inc %","Exp %"]
-//        var percentage : Double = (100 * expenseValueCount) / earnValueCount
-//
-//        var monthExpensePercentage : [Double] = [percentage]
-//        if (expenseValueCount == 0) && (earnValueCount != 0){
-//            track = ["100 % Saving","0 % Expense"]
-//            monthExpensePercentage = [100,0]
-//        }else if (earnValueCount == 0) && (expenseValueCount != 0){
-//            track = ["0 % Saving","100 % Expense"]
-//            monthExpensePercentage = [0,100]
-//        }else if (earnValueCount == 0) && (expenseValueCount == 0){
-//            track = ["0 % Saving","0 % Expense"]
-//            monthExpensePercentage = [0,0]
-//        }else if (percentage > 100){
-//            track = ["0 % Saving","100 % Expense"]
-//            monthExpensePercentage = [0,100]
-//        }else if (percentage < 100){
-//            let remainPercentage = 100 - percentage
-//            track = ["\(String(format:"%.2f", remainPercentage)) % Saving","\(String(format:"%.2f", percentage)) % Expense"]
-//            monthExpensePercentage = [remainPercentage,percentage]
-//        }
-//
-//        print(track)
-//        print(monthExpensePercentage)
-        
-//        setChart(dataPoints: track, values: monthExpensePercentage)
-       
+       // print(dateDisplayArray)
+//        setGroupBarChart(months: dateStringArray, unitsSold: incomeDoubleValueArray, unitsBought: expenseDoubleValueArray)
+
+       setGroupBarChart(months: dateDisplayArray, unitsSold: incomeDoubleValueArray, unitsBought: expenseDoubleValueArray)
     }
     
     //MARK:-  End Date Selected
