@@ -54,7 +54,7 @@ class introductionViewController: UIViewController {
         }
         if (isBackButtonNeeded){
             btnBack.isHidden = false
-            btnPlayAgain.isHidden = true
+            btnPlayAgain.isHidden = false
             btnSkip.isHidden = true
         }else{
             btnBack.isHidden = true
@@ -115,7 +115,7 @@ class introductionViewController: UIViewController {
         layer.frame = self.videoView.bounds
         
         // make the video fill the layer as much as possible while keeping its aspect size
-        layer.videoGravity = AVLayerVideoGravity.resizeAspect
+        layer.videoGravity = AVLayerVideoGravity.resize
         
         // add the layer to the container view
         

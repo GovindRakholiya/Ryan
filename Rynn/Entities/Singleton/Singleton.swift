@@ -1169,3 +1169,37 @@ extension UIDevice {
         return TARGET_OS_SIMULATOR != 0
     }
 }
+
+
+
+public extension UIViewController {
+    
+    /// Adds child view controller to the parent.
+    ///
+    /// - Parameter child: Child view controller.
+    func add(_ child: UIViewController, frame: CGRect? = nil) {
+        addChildViewController(child)
+        
+        if let frame = frame {
+            child.view.frame = frame
+        }
+        
+        view.addSubview(child.view)
+        child.didMove(toParentViewController: self)
+    }
+//    func add(_ child: UIViewController) {
+//        addChildViewController(child)
+//        view.addSubview(child.view)
+//        child.didMove(toParentViewController: self)
+//    }
+    
+    /// It removes the child view controller from the parent.
+    func remove() {
+        guard parent != nil else {
+            return
+        }
+        willMove(toParentViewController: nil)
+        removeFromParentViewController()
+        view.removeFromSuperview()
+    }
+}

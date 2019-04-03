@@ -10,23 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.746163"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.747842"
+            timestampString = "575915888.716771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "280"
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.749248"
+            timestampString = "575915888.716885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "285"
@@ -58,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.751264"
+            timestampString = "575915888.716933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "313"
@@ -74,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.751983"
+            timestampString = "575915888.716976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "326"
@@ -90,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.752761"
+            timestampString = "575915888.717018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "333"
@@ -106,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.753901"
+            timestampString = "575915888.717059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "308"
@@ -122,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.7553951"
+            timestampString = "575915888.717101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "329"
@@ -138,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.757146"
+            timestampString = "575915888.717141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "318"
@@ -154,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.757978"
+            timestampString = "575915888.717181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "271"
@@ -170,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.758408"
+            timestampString = "575915888.7172199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "279"
@@ -186,45 +170,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.759061"
+            timestampString = "575915888.71726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "277"
             endingLineNumber = "277"
             landmarkName = "facebookLoginCall()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BUILD.LoginViewController.facebookLoginCall() -&gt; ()"
-                  moduleName = "BUILD"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Govind/CitrusBug/Rynn/Rynn/Login/LoginViewController.swift"
-                  timestampString = "571172878.879227"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "277"
-                  endingLineNumber = "277"
-                  offsetFromSymbolStart = "1245">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in BUILD.LoginViewController.facebookLoginCall() -&gt; ()"
-                  moduleName = "BUILD"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Govind/CitrusBug/Rynn/Rynn/Login/LoginViewController.swift"
-                  timestampString = "571172878.881791"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "279"
-                  endingLineNumber = "279"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,13 +186,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.7596689"
+            timestampString = "575915888.717301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "254"
             endingLineNumber = "254"
-            landmarkName = "btnViewFacebookPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.760329"
+            timestampString = "575915888.7173589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "484"
@@ -266,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rynn/Login/LoginViewController.swift"
-            timestampString = "571172870.760944"
+            timestampString = "575915888.717401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"

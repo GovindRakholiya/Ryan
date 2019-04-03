@@ -11,6 +11,9 @@ import Charts
 
 class ChartsAndReportsViewController: UIViewController {
     
+    @IBOutlet weak var barChartScrollView: UIScrollView!
+    @IBOutlet weak var pieChartScrollView: UIScrollView!
+    @IBOutlet weak var btnChart: UIButton!
     @IBOutlet weak var viewBudgetAmount: UIView!
     @IBOutlet weak var btnPrev: UIButton!
     @IBOutlet weak var btnNext: UIButton!
@@ -54,6 +57,18 @@ class ChartsAndReportsViewController: UIViewController {
        setDatePicker()
         
         
+    }
+    
+    @IBAction func btnChartPressed(_ sender: Any) {
+        let barChartVC = BarChartReportViewController(nibName: "BarChartReportViewController", bundle: nil)
+        self.add(barChartVC, frame: self.view.frame)
+//        if (barChartScrollView.isHidden == true){
+//            barChartScrollView.isHidden = false
+//            pieChartScrollView.isHidden = true
+//        }else{
+//            barChartScrollView.isHidden = true
+//            pieChartScrollView.isHidden = false
+//        }
     }
     
     

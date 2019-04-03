@@ -44,6 +44,8 @@ class ChartMarker: MarkerView {
 
 
 class BarChartReportViewController: UIViewController,ChartViewDelegate {
+    
+    var lastDate : Date = Date()
     @IBOutlet weak var lblNoDataAvailable: UILabel!
     
     @IBOutlet weak var btnSearch: UIButton!
@@ -112,16 +114,20 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         DisplayData()
         setDatePicker()
         
-//        chartForbarView.xAxis.drawAxisLineEnabled = false
-//        chartForbarView.xAxis.drawGridLinesEnabled = false
+        chartForbarView.xAxis.drawAxisLineEnabled = false
+        chartForbarView.xAxis.drawGridLinesEnabled = false
         chartForbarView.doubleTapToZoomEnabled = false
-//        chartForbarView.rightAxis.drawGridLinesEnabled = false
-//        chartForbarView.rightAxis.drawAxisLineEnabled = false
+        chartForbarView.rightAxis.drawGridLinesEnabled = false
+        chartForbarView.rightAxis.drawAxisLineEnabled = false
+        chartForbarView.leftAxis.drawAxisLineEnabled = false
+        chartForbarView.leftAxis.drawGridLinesEnabled = false
     }
     
     func DisplayData() {
         
-        showPieChart()
+//        showPieChart()
+        currentIndex = 1
+        loadViewAsPerSwipe()
         addGestureForSwipe()
     }
     
@@ -136,6 +142,9 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     }
     
     
+    @IBAction func btnPieChartPressed(_ sender: Any) {
+        self.remove()
+    }
     //MARK:-  Gesture Recognizer methods
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -185,8 +194,8 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
             let stopDate = endDate?.string(format: "d MMMM, yyyy") ?? ""
             
             lblTodaysDate.text = "\(startDate) - \(stopDate)"
-            
-            getTheMonthlyData(startDate: newDate!)
+            getTheWeeklyData(startDate: newDate!, next: true)
+//            getTheMonthlyData(startDate: newDate!)
         }
         else if (currentIndex == 2){
             let newDate = Date().startOfMonth()
@@ -207,6 +216,76 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     }
     
     
+    
+    //MARK:-  Get The Weekly Data
+    func getTheWeeklyData(startDate : Date,next : Bool){
+        
+        
+        var dayComponent = DateComponents()
+        var expenseArrayCheck : [expense] = [expense]()
+        
+        var totalDays : Int = Date().getDaysInMonth()
+        
+        if (next == true){
+            totalDays = 7
+        }else{
+            totalDays = 7
+        }
+        
+            lblBudgetType.text = "Weekly Budget"
+        
+        
+        for i in 0...totalDays {
+            print(i)
+            print(totalDays)
+            
+            if (i == totalDays){
+                
+                showMonthlyChart(mothlyExpense: expenseArrayCheck)
+                return
+                
+            }
+            
+            //            if (i == 0){
+            //                dayComponent.day = 0
+            //            }else{
+            dayComponent.day = i
+            //            }
+            
+            let theCalendar = Calendar.current
+            let nextDate = theCalendar.date(byAdding: dayComponent, to: startDate)
+            lastDate = nextDate ?? Date()
+            //
+            if let aDate = nextDate {
+                //                    let changedDate = aDate.string(with: "MM-dd-yyyy HH:mm")
+                let changedDate = aDate.string(with: "MM-dd-yyyy")
+                let currentDate = Date().string(format: "MM-dd-yyyy")
+                
+                
+                let startPrintDate = startDate.string(format: "d MMMM, yyyy") ?? ""
+                
+                let stopPrintDate = aDate.string(format: "d MMMM, yyyy") ?? ""
+                
+                lblTodaysDate.text = "\(startPrintDate) - \(stopPrintDate)"
+                
+                
+                
+                let expensedData : [expense] = DBManager.shared.loadExpenseDateWise(strDate: changedDate)
+                print(changedDate)
+                print("expenseDataCount : \(expensedData.count)")
+                for exp in expensedData{
+                    expenseArrayCheck.append(exp)
+                }
+                print("expenseArrayCount : \(expenseArrayCheck.count)")
+                //                if (changedDate == currentDate){
+                //                    break
+                //                }
+                
+            }
+        }
+        print(expenseArrayCheck)
+        showMonthlyChart(mothlyExpense: expenseArrayCheck)
+    }
     
     //MARK:-  Get The Monthly Data
     func getTheMonthlyData(startDate : Date){
@@ -247,7 +326,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
             
             let theCalendar = Calendar.current
             let nextDate = theCalendar.date(byAdding: dayComponent, to: startDate)
-            
+            lastDate = nextDate ?? Date()
             //
             if let aDate = nextDate {
                 //                    let changedDate = aDate.string(with: "MM-dd-yyyy HH:mm")
@@ -345,49 +424,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         incomeDoubleValueArray = [earnValueCount]
         
         setGroupBarChart(months: dateStringArray, unitsSold: incomeDoubleValueArray, unitsBought: expenseDoubleValueArray)
-//        let totalval = earnValueCount - expenseValueCount
-//        btnDailyBudgetAmount.setTitle("$ \(String(format:"%.2f", totalval))", for: .normal)
-        
-        
-        
-        
-        
-        
-//        var track = ["Inc %","Exp %"]
-//        var percentage : Double = (100 * expenseValueCount) / earnValueCount
-//
-//        var monthExpensePercentage : [Double] = [percentage]
-//        if (expenseValueCount == 0) && (earnValueCount != 0){
-//            track = ["100 % Saving","0 % Expense"]
-//            monthExpensePercentage = [100,0]
-//        }else if (earnValueCount == 0) && (expenseValueCount != 0){
-//            track = ["0 % Saving","100 % Expense"]
-//            monthExpensePercentage = [0,100]
-//        }else if (earnValueCount == 0) && (expenseValueCount == 0){
-//            track = ["0 % Saving","0 % Expense"]
-//            monthExpensePercentage = [0,0]
-//        }else if (percentage > 100){
-//            track = ["0 % Saving","100 % Expense"]
-//            monthExpensePercentage = [0,100]
-//        }else if (percentage < 100){
-//            let remainPercentage = 100 - percentage
-//            track = ["\(String(format:"%.2f", remainPercentage)) % Saving","\(String(format:"%.2f", percentage)) % Expense"]
-//            monthExpensePercentage = [remainPercentage,percentage]
-//        }
-//
-//        print(track)
-//        print(monthExpensePercentage)
-//        //        updateChartData(track: track, money: monthExpensePercentage)
-//
-//        setChart(dataPoints: track, values: monthExpensePercentage)
-        
-        
-        //        let tracky = ["Earned", "Spent"]
-        //        //        print(earnValueCount)
-        //        //        print(expenseValueCount)
-        //        let mone = [earnValueCount, expenseValueCount]
-        //
-        //        updateChartData(track: tracky, money: mone)
+
     }
     
     
@@ -418,7 +455,6 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         
         chartForbarView.rightAxis.enabled = false
         
-        
         chartForbarView.delegate = self
         chartForbarView.noDataText = "You need to provide data for the chart."
         chartForbarView.chartDescription?.textColor = UIColor.clear
@@ -429,13 +465,12 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
         //xaxis.valueFormatter = axisFormatDelegate
         xaxis.forceLabelsEnabled = true
         xaxis.drawGridLinesEnabled = false
-        xaxis.labelPosition = .top
+        xaxis.labelPosition = .bottom
         xaxis.centerAxisLabelsEnabled = true
         xaxis.valueFormatter = IndexAxisValueFormatter(values:months)
         xaxis.granularityEnabled = true
         xaxis.granularity = 1
         xaxis.setLabelCount(dateStringArray.count, force: false)
-        
         
         
         var dataEntries: [BarChartDataEntry] = []
@@ -576,18 +611,23 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     
     
     @IBAction func btnRightPressed(_ sender: Any) {
-        if (currentIndex != 3){
-            currentIndex = currentIndex + 1
-            loadViewAsPerSwipe()
-        }
+        getTheWeeklyData(startDate: lastDate, next: true)
+//        if (currentIndex != 3){
+//            currentIndex = currentIndex + 1
+//            loadViewAsPerSwipe()
+//        }
     }
     
     @IBAction func btnLeftPressed(_ sender: Any) {
-        
-        if (currentIndex != 0){
-            currentIndex = currentIndex - 1
-            loadViewAsPerSwipe()
-        }
+        var dayComponent = DateComponents()
+        dayComponent.day = -12
+        let theCalendar = Calendar.current
+        let nextDate = theCalendar.date(byAdding: dayComponent, to: lastDate)
+        getTheWeeklyData(startDate: nextDate!, next: false)
+//        if (currentIndex != 0){
+//            currentIndex = currentIndex - 1
+//            loadViewAsPerSwipe()
+//        }
     }
     
     //MARK:-  Display Chart Between Two Dates

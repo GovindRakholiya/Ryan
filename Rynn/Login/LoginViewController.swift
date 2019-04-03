@@ -47,39 +47,39 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDelegat
         if self.isMovingToParentViewController {
             
             if (Global.kretriUserData().IsLoggedIn!.toBool())  {
-//                Global.appDelegate.ConfigureTabbarAgent(animated: false)
+                Global.appDelegate.ConfigureTabbarAgent(animated: false)
                 
-                RazeFaceProducts.store.requestProducts { (isSucess, products) in
-                    if (isSucess){
-                        if (products?.count == 0){
-                            let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
-
-                            selctPlanVC.isBackButtonNeeded = false
-
-                            self.navigationController?.pushViewController(selctPlanVC, animated: false)
-                        }
-                        for pro : SKProduct in products!{
-                            print(pro.productIdentifier)
-                            if (RazeFaceProducts.store.isProductPurchased(pro.productIdentifier)){
-                                Global.appDelegate.ConfigureTabbarAgent(animated: false)
-                                return
-                            }
-                        }
-                        let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
-
-                        selctPlanVC.isBackButtonNeeded = false
-
-                        self.navigationController?.pushViewController(selctPlanVC, animated: false)
-
-                    }else{
-                        let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
-
-                        selctPlanVC.isBackButtonNeeded = false
-
-                        self.navigationController?.pushViewController(selctPlanVC, animated: false)
-                    }
-
-                }
+//                RazeFaceProducts.store.requestProducts { (isSucess, products) in
+//                    if (isSucess){
+//                        if (products?.count == 0){
+//                            let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+//
+//                            selctPlanVC.isBackButtonNeeded = false
+//
+//                            self.navigationController?.pushViewController(selctPlanVC, animated: false)
+//                        }
+//                        for pro : SKProduct in products!{
+//                            print(pro.productIdentifier)
+//                            if (RazeFaceProducts.store.isProductPurchased(pro.productIdentifier)){
+//                                Global.appDelegate.ConfigureTabbarAgent(animated: false)
+//                                return
+//                            }
+//                        }
+//                        let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+//
+//                        selctPlanVC.isBackButtonNeeded = false
+//
+//                        self.navigationController?.pushViewController(selctPlanVC, animated: false)
+//
+//                    }else{
+//                        let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+//
+//                        selctPlanVC.isBackButtonNeeded = false
+//
+//                        self.navigationController?.pushViewController(selctPlanVC, animated: false)
+//                    }
+//
+//                }
                 
 
                 
