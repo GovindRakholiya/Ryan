@@ -16,6 +16,7 @@ import StoreKit
 
 class LoginViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDelegate {
 
+    @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
@@ -35,6 +36,7 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDelegat
     }
     override func viewDidLayoutSubviews() {
         Singleton.sharedSingleton.setCornerRadius(view: btnLogin, radius: btnLogin.frame.size.height / 2)
+        Singleton.sharedSingleton.setCornerRadius(view: btnSignUp, radius: btnSignUp.frame.size.height / 2)
         Singleton.sharedSingleton.setShadow(to: viewFacebook)
         Singleton.sharedSingleton.setShadow(to: viewGoogle)
     }

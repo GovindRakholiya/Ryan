@@ -71,6 +71,12 @@ class ChartsAndReportsViewController: UIViewController {
 //        }
     }
     
+    @IBAction func btnDailyChartPressed(_ sender: Any) {
+        let dailyChartVC = DailyChartViewController(nibName: "DailyChartViewController", bundle: nil)
+        self.add(dailyChartVC, frame: self.view.frame)
+    }
+    
+    
     
     func setDatePicker() {
         // Posiiton date picket within a view

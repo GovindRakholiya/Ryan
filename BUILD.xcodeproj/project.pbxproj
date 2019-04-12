@@ -124,6 +124,10 @@
 		B8133BD92251DE1A0014ABF8 /* introductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8133BD72251DE1A0014ABF8 /* introductionViewController.swift */; };
 		B8133BDA2251DE1A0014ABF8 /* introductionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8133BD82251DE1A0014ABF8 /* introductionViewController.xib */; };
 		B8133BDE225249900014ABF8 /* SampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8133BDD225249900014ABF8 /* SampleVideo.mp4 */; };
+		B82E481722606C35003CF063 /* DailyExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82E481522606C35003CF063 /* DailyExpenseTableViewCell.swift */; };
+		B82E481822606C35003CF063 /* DailyExpenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82E481622606C35003CF063 /* DailyExpenseTableViewCell.xib */; };
+		B853B279225F392500190E5E /* DailyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B853B277225F392500190E5E /* DailyChartViewController.swift */; };
+		B853B27A225F392500190E5E /* DailyChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B853B278225F392500190E5E /* DailyChartViewController.xib */; };
 		B8D7FFB22248CF5400925620 /* BarChartReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */; };
 		B8D7FFB32248CF5400925620 /* BarChartReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */; };
 		FE57B2EACDD1DDC31668A214 /* Pods_BUILD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */; };
@@ -289,6 +293,10 @@
 		B8133BD72251DE1A0014ABF8 /* introductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introductionViewController.swift; sourceTree = "<group>"; };
 		B8133BD82251DE1A0014ABF8 /* introductionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = introductionViewController.xib; sourceTree = "<group>"; };
 		B8133BDD225249900014ABF8 /* SampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo.mp4; sourceTree = "<group>"; };
+		B82E481522606C35003CF063 /* DailyExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		B82E481622606C35003CF063 /* DailyExpenseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyExpenseTableViewCell.xib; sourceTree = "<group>"; };
+		B853B277225F392500190E5E /* DailyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChartViewController.swift; sourceTree = "<group>"; };
+		B853B278225F392500190E5E /* DailyChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyChartViewController.xib; sourceTree = "<group>"; };
 		B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartReportViewController.swift; sourceTree = "<group>"; };
 		B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartReportViewController.xib; sourceTree = "<group>"; };
 		D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUILD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -723,6 +731,10 @@
 				419A290221786B5500F756FA /* ChartsAndReportsViewController.xib */,
 				B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */,
 				B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */,
+				B853B277225F392500190E5E /* DailyChartViewController.swift */,
+				B853B278225F392500190E5E /* DailyChartViewController.xib */,
+				B82E481522606C35003CF063 /* DailyExpenseTableViewCell.swift */,
+				B82E481622606C35003CF063 /* DailyExpenseTableViewCell.xib */,
 			);
 			path = ChartsAndReports;
 			sourceTree = "<group>";
@@ -906,6 +918,7 @@
 				41D6BF61219E862600D2CA1E /* LaunchScreen.storyboard in Resources */,
 				41D6BF62219E862600D2CA1E /* Rynn.db in Resources */,
 				41D6BF63219E862600D2CA1E /* NotificationView.xib in Resources */,
+				B853B27A225F392500190E5E /* DailyChartViewController.xib in Resources */,
 				41D6BF64219E862600D2CA1E /* ViewDurationPicker.xib in Resources */,
 				41D6BF65219E862600D2CA1E /* ViewSort.xib in Resources */,
 				41D6BF67219E862600D2CA1E /* Roboto-Italic.ttf in Resources */,
@@ -927,6 +940,7 @@
 				41D6BF76219E862600D2CA1E /* Roboto-Bold.ttf in Resources */,
 				41D6BF77219E862600D2CA1E /* Roboto-Regular.ttf in Resources */,
 				41D6BF78219E862600D2CA1E /* ChangePasswordViewController.xib in Resources */,
+				B82E481822606C35003CF063 /* DailyExpenseTableViewCell.xib in Resources */,
 				41D6BF79219E862600D2CA1E /* GoogleService-Info.plist in Resources */,
 				41D6BF7A219E862600D2CA1E /* ForgotPasswordViewController.xib in Resources */,
 				41D6BF7B219E862600D2CA1E /* client_1082297684925-1q0rpi620uon17thmlddq74gaj79hfih.apps.googleusercontent.com.plist in Resources */,
@@ -1080,6 +1094,7 @@
 				41D6BF40219E862600D2CA1E /* NotificationView.swift in Sources */,
 				41D6BF41219E862600D2CA1E /* UITabBarCustom.swift in Sources */,
 				41D6BF42219E862600D2CA1E /* categoryListViewController.swift in Sources */,
+				B82E481722606C35003CF063 /* DailyExpenseTableViewCell.swift in Sources */,
 				41D6BF43219E862600D2CA1E /* String+RegEx.swift in Sources */,
 				41D6BF44219E862600D2CA1E /* SignUpViewController.swift in Sources */,
 				41D6BF45219E862600D2CA1E /* AccountAPIManger.swift in Sources */,
@@ -1088,6 +1103,7 @@
 				41D6BF48219E862600D2CA1E /* UIImage+Resize.m in Sources */,
 				41D6BF49219E862600D2CA1E /* RecurrenceCycleViewController.swift in Sources */,
 				41D6BF4A219E862600D2CA1E /* ACFloatingTextfield.swift in Sources */,
+				B853B279225F392500190E5E /* DailyChartViewController.swift in Sources */,
 				41D6BF4B219E862600D2CA1E /* categoryTableViewCell.swift in Sources */,
 				41D6BF4C219E862600D2CA1E /* UIColor+AppColors.swift in Sources */,
 				41D6BF4D219E862600D2CA1E /* FMDatabasePool.m in Sources */,

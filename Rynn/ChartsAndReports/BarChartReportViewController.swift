@@ -141,9 +141,15 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
 //        self.view.addGestureRecognizer(swipeRight)
     }
     
+    @IBAction func btnDailyChartPressed(_ sender: Any) {
+        let dailyChartVC = DailyChartViewController(nibName: "DailyChartViewController", bundle: nil)
+        self.add(dailyChartVC, frame: self.view.frame)
+    }
     
     @IBAction func btnPieChartPressed(_ sender: Any) {
-        self.remove()
+        let chartAndReportVC = ChartsAndReportsViewController(nibName: "ChartsAndReportsViewController", bundle: nil)
+        self.add(chartAndReportVC, frame: self.view.frame)
+//        self.remove()
     }
     //MARK:-  Gesture Recognizer methods
     
@@ -757,7 +763,7 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.removeChild()
         filterViewHeight.constant = 0
         Global.appDelegate.tabBarController.hideTabBar()
         viewDateSelection.isHidden = true

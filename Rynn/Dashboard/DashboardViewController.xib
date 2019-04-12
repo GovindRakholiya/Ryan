@@ -220,7 +220,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.24326381087303162" green="0.73601895570755005" blue="0.64712458848953247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.24313725490196078" green="0.73725490196078436" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="clk-F3-hof" firstAttribute="centerY" secondItem="TEd-ZQ-5UR" secondAttribute="centerY" constant="-5" id="1kR-Ml-ovY"/>
                                                 <constraint firstAttribute="width" constant="80" id="6Kb-kq-sda"/>

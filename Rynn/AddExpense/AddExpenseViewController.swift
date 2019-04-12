@@ -233,16 +233,6 @@ class AddExpenseViewController: UIViewController,selectCategoryDelegate,UITextFi
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 if (self.selectedExpenseType == "One Time"){
                     let totalDays = self.selectedRecurrenceCycle * 1
                     var totalCost = Float(strAmount)! / Float(1)

@@ -1203,3 +1203,15 @@ public extension UIViewController {
         view.removeFromSuperview()
     }
 }
+
+
+extension UIViewController {
+    
+    func removeChild() {
+        self.childViewControllers.forEach {
+            $0.didMove(toParentViewController: nil)
+            $0.view.removeFromSuperview()
+            $0.removeFromParentViewController()
+        }
+    }
+}

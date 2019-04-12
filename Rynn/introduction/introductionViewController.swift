@@ -42,7 +42,7 @@ class introductionViewController: UIViewController {
 //
 //        avPlayerController.player?.play()
 //        self.view.addSubview(avPlayerController.view)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: player)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: player)
 
 
         initializeVideoPlayerWithVideo()
@@ -61,6 +61,14 @@ class introductionViewController: UIViewController {
             btnPlayAgain.isHidden = false
             btnSkip.isHidden = false
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didPlayToEnd), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+
+    }
+    
+    @objc func didPlayToEnd() {
+         btnPlayAgain.isEnabled = true
+       btnPlayAgain.setTitle("Play Again", for: .normal)
     }
     
     @IBAction func btnBackPressed(_ sender: Any) {
@@ -77,19 +85,28 @@ class introductionViewController: UIViewController {
         Global.appDelegate.window?.makeKeyAndVisible()
     }
     
-    @IBAction func btnPlayAgainPressed(_ sender: Any) {
+    @IBAction func btnPlayAgainPressed(_ sender: UIButton) {
+       
         if (player.isPlaying){
             player.pause()
             btnPlayAgain.setTitle("Play", for: .normal)
         }else{
            // initializeVideoPlayerWithVideo()
-            player.play()
-            btnPlayAgain.setTitle("Pause", for: .normal)
+            if (sender.titleLabel?.text == "Play Again"){
+                initializeVideoPlayerWithVideo()
+                btnPlayAgain.setTitle("Pause", for: .normal)
+            }else{
+                player.play()
+                btnPlayAgain.setTitle("Pause", for: .normal)
+            }
+            
         }
        
     }
     @objc func itemDidFinishPlaying(_ notification: Notification?) {
-//        btnPlayAgain.isEnabled = true
+        
+        btnPlayAgain.isEnabled = true
+        btnPlayAgain.setTitle("Play", for: .normal)
 //        print("DONE")
         // Will be called when AVPlayer finishes playing playerItem
     }
