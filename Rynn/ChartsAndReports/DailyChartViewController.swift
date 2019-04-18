@@ -27,6 +27,7 @@ class DailyChartViewController: UIViewController,UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setDatePicker()
+        showTableViewAccordingSelectedDate()
         // Do any additional setup after loading the view.
     }
 
@@ -139,9 +140,14 @@ class DailyChartViewController: UIViewController,UITableViewDataSource,UITableVi
 
             
 //            let currentDate : String = Date().string(format: "EEEE d MMMM, yyyy")
-            let currentDate : String = startDate
-            print(currentDate)
-            print(newDate)
+            var currentDate : String = ""
+            if (startDate == ""){
+                currentDate = Date().string(format: "EEEE d MMMM, yyyy")
+                lblSelectedDate.text = currentDate
+            }else{
+                currentDate  = startDate
+            }
+            
             
             if (currentDate == newDate){
                 todaysArray.append(response)
@@ -227,13 +233,19 @@ class DailyChartViewController: UIViewController,UITableViewDataSource,UITableVi
                 if let earningObj : expense = earnedArray[indexPath.row]{
                     cell.lblTitle.text = earningObj.expenseTitle
                     cell.lblCategory.text = earningObj.expenseCategoryName
-                    cell.lblAmount.text = "$ \(earningObj.expenseAmount)"
+                    
+                    var floatEarningValue : Float = Float(earningObj.expenseAmount) ?? 0.0
+                    cell.lblAmount.text = "$ \(String(format:"%.2f", floatEarningValue))"
+                    
+//                    cell.lblAmount.text = "$ \(earningObj.expenseAmount)"
                 }
             }else{
                 if let expenseObj : expense = expenseArray[indexPath.row]{
                     cell.lblTitle.text = expenseObj.expenseTitle
                     cell.lblCategory.text = expenseObj.expenseCategoryName
-                    cell.lblAmount.text = "$ \(expenseObj.expenseAmount)"
+//                    cell.lblAmount.text = "$ \(expenseObj.expenseAmount)"
+                    var floatExpenseValue : Float = Float(expenseObj.expenseAmount) ?? 0.0
+                    cell.lblAmount.text = "$ \(String(format:"%.2f", floatExpenseValue))"
                 }
             }
            
@@ -241,7 +253,9 @@ class DailyChartViewController: UIViewController,UITableViewDataSource,UITableVi
             if let expenseObj : expense = expenseArray[indexPath.row]{
                 cell.lblTitle.text = expenseObj.expenseTitle
                 cell.lblCategory.text = expenseObj.expenseCategoryName
-                cell.lblAmount.text = "$ \(expenseObj.expenseAmount)"
+//                cell.lblAmount.text = "$ \(expenseObj.expenseAmount)"
+                var floatExpenseValue : Float = Float(expenseObj.expenseAmount) ?? 0.0
+                cell.lblAmount.text = "$ \(String(format:"%.2f", floatExpenseValue))"
             }
         }
         return cell

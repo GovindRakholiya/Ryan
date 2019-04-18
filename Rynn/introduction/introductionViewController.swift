@@ -49,6 +49,7 @@ class introductionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        AppUtility.lockOrientation(.landscapeRight)
         if (Global.appDelegate.tabBarController != nil){
             Global.appDelegate.tabBarController.hideTabBar()
         }
@@ -75,6 +76,10 @@ class introductionViewController: UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+//        AppUtility.lockOrientation(.portrait)
+    }
     
 
     @IBAction func btnSkipPressed(_ sender: Any) {
@@ -125,14 +130,16 @@ class introductionViewController: UIViewController {
         // initialize the video player with the url
         self.player = AVPlayer(url: videoUrl)
         
+        
         // create a video layer for the player
         let layer: AVPlayerLayer = AVPlayerLayer(player: player)
         
         // make the layer the same size as the container view
         layer.frame = self.videoView.bounds
+        layer.goFullscreen()
         
         // make the video fill the layer as much as possible while keeping its aspect size
-        layer.videoGravity = AVLayerVideoGravity.resize
+        layer.videoGravity = AVLayerVideoGravity.resizeAspect
         
         // add the layer to the container view
         
@@ -157,5 +164,32 @@ class introductionViewController: UIViewController {
 extension AVPlayer {
     var isPlaying: Bool {
         return rate != 0 && error == nil
+    }
+}
+
+
+extension CGAffineTransform {
+    
+    static let ninetyDegreeRotation = CGAffineTransform(rotationAngle: CGFloat(M_PI / 2))
+}
+
+extension AVPlayerLayer {
+    
+    var fullScreenAnimationDuration: TimeInterval {
+        return 0.15
+    }
+    
+    func minimizeToFrame(_ frame: CGRect) {
+        UIView.animate(withDuration: fullScreenAnimationDuration) {
+            self.setAffineTransform(.identity)
+            self.frame = frame
+        }
+    }
+    
+    func goFullscreen() {
+        UIView.animate(withDuration: fullScreenAnimationDuration) {
+            self.setAffineTransform(.ninetyDegreeRotation)
+            self.frame = UIScreen.main.bounds
+        }
     }
 }
