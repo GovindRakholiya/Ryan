@@ -283,7 +283,7 @@ class SelectPlanViewController: UIViewController {
        
         
         if (selectedPlan == 0){
-            Singleton.sharedSingleton.showWarningAlert(withMsg: "Please Select Any plan than you can use Free Trial")
+            Singleton.sharedSingleton.showWarningAlert(withMsg: "Please select a plan")
             return
         }else if (selectedPlan == 1){
             SVProgressHUD.show()

@@ -71,7 +71,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmz-AF-hYc">
-                    <rect key="frame" x="10" y="80" width="300" height="300"/>
+                    <rect key="frame" x="10" y="80" width="300" height="310"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-MH-JUF">
                             <rect key="frame" x="106.5" y="10" width="87.5" height="16.5"/>
@@ -187,25 +187,31 @@
                             </constraints>
                         </view>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0U-6j-cu8">
-                            <rect key="frame" x="150" y="240" width="0.0" height="0.0"/>
+                            <rect key="frame" x="150" y="225" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBC-GV-Est">
-                            <rect key="frame" x="78" y="245" width="144" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBC-GV-Est">
+                            <rect key="frame" x="60" y="230" width="180" height="40"/>
                             <color key="backgroundColor" red="0.22352941176470589" green="0.26666666666666666" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="gs1-Zz-LWR"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
-                            <state key="normal" title="      Get Free Trial    ">
+                            <state key="normal" title="    Start 7 day free trial   ">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="btnTryFor30DayPressed:" destination="-1" eventType="touchUpInside" id="E45-09-1wP"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel any time! After the trial period, you will be charged automatically unless you have canceled prior to billing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCF-0A-CKs">
+                            <rect key="frame" x="10" y="280" width="280" height="21.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="9"/>
+                            <color key="textColor" red="0.0" green="0.1058823529" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97X-Pg-3Ms">
                             <rect key="frame" x="30" y="51" width="240" height="42.5"/>
                             <string key="text">Get a full week absolutely free for choosing a plan now! Monthly and Annual plans include FULL ACCESS to ALL Budgeting and automated daily calculation features, in addition to all future app updates.</string>
@@ -219,8 +225,10 @@
                         <constraint firstItem="rBC-GV-Est" firstAttribute="top" secondItem="N0U-6j-cu8" secondAttribute="bottom" constant="5" id="Dwr-KW-6U4"/>
                         <constraint firstItem="97X-Pg-3Ms" firstAttribute="top" secondItem="sPB-BN-Ct2" secondAttribute="bottom" constant="15" id="Eix-HY-Btm"/>
                         <constraint firstItem="2aK-MH-JUF" firstAttribute="centerX" secondItem="Qmz-AF-hYc" secondAttribute="centerX" id="Exj-CC-UbP"/>
+                        <constraint firstItem="eCF-0A-CKs" firstAttribute="leading" secondItem="Qmz-AF-hYc" secondAttribute="leading" constant="10" id="G3Y-3D-9CK"/>
                         <constraint firstItem="97X-Pg-3Ms" firstAttribute="centerX" secondItem="Qmz-AF-hYc" secondAttribute="centerX" id="PKH-7o-eh5"/>
-                        <constraint firstItem="rBC-GV-Est" firstAttribute="top" secondItem="PbI-9Z-TRO" secondAttribute="bottom" constant="35" id="PMM-KN-PLV"/>
+                        <constraint firstItem="rBC-GV-Est" firstAttribute="top" secondItem="PbI-9Z-TRO" secondAttribute="bottom" constant="20" id="PMM-KN-PLV"/>
+                        <constraint firstItem="eCF-0A-CKs" firstAttribute="top" secondItem="rBC-GV-Est" secondAttribute="bottom" constant="10" id="PNM-b5-f18"/>
                         <constraint firstItem="rBC-GV-Est" firstAttribute="centerX" secondItem="Qmz-AF-hYc" secondAttribute="centerX" id="RA3-43-zt0"/>
                         <constraint firstAttribute="trailing" secondItem="sPB-BN-Ct2" secondAttribute="trailing" constant="10" id="T4s-aB-M2e"/>
                         <constraint firstAttribute="trailing" secondItem="PbI-9Z-TRO" secondAttribute="trailing" constant="15" id="UYE-rg-B37"/>
@@ -229,19 +237,20 @@
                         <constraint firstItem="PbI-9Z-TRO" firstAttribute="top" secondItem="97X-Pg-3Ms" secondAttribute="bottom" constant="25" id="jSy-8e-uuk"/>
                         <constraint firstItem="N0U-6j-cu8" firstAttribute="centerX" secondItem="Qmz-AF-hYc" secondAttribute="centerX" id="jVt-rx-asa"/>
                         <constraint firstItem="2aK-MH-JUF" firstAttribute="top" secondItem="Qmz-AF-hYc" secondAttribute="top" constant="10" id="kcc-da-fB9"/>
+                        <constraint firstItem="eCF-0A-CKs" firstAttribute="centerX" secondItem="Qmz-AF-hYc" secondAttribute="centerX" id="tb1-hE-9FH"/>
                         <constraint firstItem="97X-Pg-3Ms" firstAttribute="leading" secondItem="Qmz-AF-hYc" secondAttribute="leading" constant="30" id="uB1-m4-LNB"/>
                         <constraint firstItem="sPB-BN-Ct2" firstAttribute="leading" secondItem="Qmz-AF-hYc" secondAttribute="leading" constant="10" id="wEO-Qx-E7n"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hph-3y-3Ep">
-                    <rect key="frame" x="20" y="390" width="280" height="74"/>
+                    <rect key="frame" x="20" y="400" width="280" height="74"/>
                     <string key="text">Subscription will be charged to your credit card through your iTunes account. Your subscription will automatically renew unless cancelled within 24 hours before the end of the current period. Account will be charged for renewal at the rate selected above, within 24-hours prior to the end of the current period. Subscription may be managed, and auto-renewal may be turned off by going to the Account Settings after purchase. You can cancel anytime.</string>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="9"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcE-Z2-xfa">
-                    <rect key="frame" x="34" y="483.5" width="126" height="31"/>
+                    <rect key="frame" x="34" y="493.5" width="126" height="31"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                     <state key="normal" title="Restore Purchase">
                         <color key="titleColor" red="0.14117647059999999" green="0.4823529412" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -251,7 +260,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCR-2r-znT">
-                    <rect key="frame" x="165" y="474" width="20" height="50"/>
+                    <rect key="frame" x="165" y="484" width="20" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="B25-k4-VCC"/>
@@ -259,7 +268,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU4-7q-Sn0">
-                    <rect key="frame" x="190" y="483.5" width="99" height="31"/>
+                    <rect key="frame" x="190" y="493.5" width="99" height="31"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                     <state key="normal" title="Privacy Policy">
                         <color key="titleColor" red="0.14117647058823529" green="0.4823529411764706" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -295,7 +304,7 @@
                 <constraint firstItem="Qmz-AF-hYc" firstAttribute="top" secondItem="nrT-R6-Zen" secondAttribute="bottom" constant="10" id="buV-9x-ZXe"/>
                 <constraint firstItem="m8Z-Lu-cGM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="een-hT-5ge"/>
                 <constraint firstItem="TcE-Z2-xfa" firstAttribute="centerY" secondItem="dCR-2r-znT" secondAttribute="centerY" id="ine-VM-CWF"/>
-                <constraint firstItem="Qmz-AF-hYc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="300/568" id="m8S-Ui-Psa"/>
+                <constraint firstItem="Qmz-AF-hYc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="310/568" id="m8S-Ui-Psa"/>
                 <constraint firstItem="dCR-2r-znT" firstAttribute="leading" secondItem="TcE-Z2-xfa" secondAttribute="trailing" constant="5" id="ofK-0b-Sbp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="m8Z-Lu-cGM" secondAttribute="bottom" constant="15" id="wRo-jg-Yxb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nrT-R6-Zen" secondAttribute="trailing" id="wWE-3F-XEk"/>

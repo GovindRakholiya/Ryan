@@ -144,6 +144,7 @@ PODS:
   - SwiftyJSON (4.2.0)
   - SWRevealViewController (2.3.0)
   - Toast-Swift (4.0.1)
+  - YoutubePlayer-in-WKWebView (0.2.5)
 
 DEPENDENCIES:
   - AFNetworking
@@ -166,6 +167,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - SWRevealViewController
   - Toast-Swift
+  - YoutubePlayer-in-WKWebView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -200,6 +202,7 @@ SPEC REPOS:
     - SwiftyJSON
     - SWRevealViewController
     - Toast-Swift
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -233,7 +236,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  YoutubePlayer-in-WKWebView: 4dad12b3ece938a6456fa4374df78942f88b485a
 
-PODFILE CHECKSUM: 5f9574a1de198f6fee39b01543568af1ce09dbfa
+PODFILE CHECKSUM: 4fa4a04e85bbb40747463c0e0a219469eed87fe1
 
 COCOAPODS: 1.5.3

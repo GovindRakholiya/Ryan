@@ -127,7 +127,7 @@
 		B82E481822606C35003CF063 /* DailyExpenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82E481622606C35003CF063 /* DailyExpenseTableViewCell.xib */; };
 		B853B279225F392500190E5E /* DailyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B853B277225F392500190E5E /* DailyChartViewController.swift */; };
 		B853B27A225F392500190E5E /* DailyChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B853B278225F392500190E5E /* DailyChartViewController.xib */; };
-		B8C27F3F22661CF200D2A2A5 /* SampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8C27F3E22661CF100D2A2A5 /* SampleVideo.mp4 */; };
+		B8C05528226993760053C846 /* SampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8C05527226993750053C846 /* SampleVideo.mp4 */; };
 		B8D7FFB22248CF5400925620 /* BarChartReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */; };
 		B8D7FFB32248CF5400925620 /* BarChartReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */; };
 		FE57B2EACDD1DDC31668A214 /* Pods_BUILD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */; };
@@ -296,7 +296,7 @@
 		B82E481622606C35003CF063 /* DailyExpenseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyExpenseTableViewCell.xib; sourceTree = "<group>"; };
 		B853B277225F392500190E5E /* DailyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChartViewController.swift; sourceTree = "<group>"; };
 		B853B278225F392500190E5E /* DailyChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyChartViewController.xib; sourceTree = "<group>"; };
-		B8C27F3E22661CF100D2A2A5 /* SampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo.mp4; sourceTree = "<group>"; };
+		B8C05527226993750053C846 /* SampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo.mp4; sourceTree = "<group>"; };
 		B8D7FFB02248CF5400925620 /* BarChartReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartReportViewController.swift; sourceTree = "<group>"; };
 		B8D7FFB12248CF5400925620 /* BarChartReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartReportViewController.xib; sourceTree = "<group>"; };
 		D6A3123F446072D2A7B6AFB6 /* Pods_BUILD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUILD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,7 +424,7 @@
 		41253296214F72E900784C7C /* Rynn */ = {
 			isa = PBXGroup;
 			children = (
-				B8C27F3E22661CF100D2A2A5 /* SampleVideo.mp4 */,
+				B8C05527226993750053C846 /* SampleVideo.mp4 */,
 				B8133BD62251DDED0014ABF8 /* introduction */,
 				410A4F0421D4D17000E42EFC /* InAppPurchase */,
 				410D36C021D3A96E0073B437 /* SelectPlan */,
@@ -931,7 +931,7 @@
 				41D6BF6E219E862600D2CA1E /* ChartsAndReportsViewController.xib in Resources */,
 				41D6BF6F219E862600D2CA1E /* Roboto-BoldItalic.ttf in Resources */,
 				41D6BF70219E862600D2CA1E /* SignUpViewController.xib in Resources */,
-				B8C27F3F22661CF200D2A2A5 /* SampleVideo.mp4 in Resources */,
+				B8C05528226993760053C846 /* SampleVideo.mp4 in Resources */,
 				41D6BF71219E862600D2CA1E /* MyAccountViewController.xib in Resources */,
 				41D6BF72219E862600D2CA1E /* Main.storyboard in Resources */,
 				41D6BF73219E862600D2CA1E /* categoryListViewController.xib in Resources */,
@@ -998,6 +998,7 @@
 				"${BUILT_PRODUCTS_DIR}/SpinKit/SpinKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/YoutubePlayer-in-WKWebView/YoutubePlayer_in_WKWebView.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1024,6 +1025,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpinKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YoutubePlayer_in_WKWebView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

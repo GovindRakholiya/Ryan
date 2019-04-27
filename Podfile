@@ -30,6 +30,8 @@ pod 'FBSDKLoginKit', '~> 4.38.0'
 pod 'SVProgressHUD'
 pod 'Toast-Swift'
 
+pod "YoutubePlayer-in-WKWebView"
+
 #pod 'DatePicker', '1.0.0'
   # Pods for Rynn
 
