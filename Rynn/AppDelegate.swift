@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SWRevealViewControllerDele
 
     var window: UIWindow?
     var navigation : UINavigationController?
-    var orientationLock = UIInterfaceOrientationMask.all
+  //  var orientationLock = UIInterfaceOrientationMask.all
 
     var DashboardObj : DashboardViewController? // First Tab
     var ExpenseListObj : ExpenseListViewController? // Second Tab
@@ -57,9 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SWRevealViewControllerDele
     }
 
     
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return self.orientationLock
-    }
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        return self.orientationLock
+//    }
     
     
     func logOutUser() {

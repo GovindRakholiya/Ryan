@@ -13,10 +13,20 @@ import SVProgressHUD
 
 class SelectPlanViewController: UIViewController {
    
+    @IBOutlet weak var lblOneTimePurchasedSucessfully: UILabel!
+    @IBOutlet weak var lblOneTimePrice: UILabel!
+    @IBOutlet weak var lblDailyBudget: UILabel!
+    @IBOutlet weak var lblMinutesGetstarted: UILabel!
+    @IBOutlet weak var lblSafeData: UILabel!
+    @IBOutlet weak var lblFinancialDecision: UILabel!
+    
+    @IBOutlet weak var viewOneTime: UIView!
+    
+    
     @IBOutlet weak var btnBack: UIButton!
     var isBackButtonNeeded : Bool = false
     
-    var selectedPlan : Int = 0 // 0-- Not Selected , 1-- Monthly , 2--Yearly
+    var selectedPlan : Int = 2 // 0-- Not Selected , 1-- Monthly , 2--Yearly
     @IBOutlet weak var lblMonthlyPurchasedStatus: UILabel!
     @IBOutlet weak var lblYearlyPrice: UILabel!
     @IBOutlet weak var lblMonthlyPrice: UILabel!
@@ -79,11 +89,23 @@ class SelectPlanViewController: UIViewController {
                     if (pro.productIdentifier == RazeFaceProducts.MonthlyIAP){
 //                        let price : String = SelectPlanViewController.priceFormatter.string(from: pro.price)!
                         let price : String = self!.priceStringForProduct(item: pro) ?? "0.0"
-                        self?.lblMonthlyPrice.text = price
+                        
+                        DispatchQueue.main.async {
+                            self?.lblMonthlyPrice.text = price
+                        }
+                        
                         if RazeFaceProducts.store.isProductPurchased(pro.productIdentifier) {
-                            self?.lblMonthlyPurchasedStatus.text = "Purchased"
+                            DispatchQueue.main.async {
+                                self?.lblMonthlyPurchasedStatus.text = "Purchased"
+                            }
+                            
+                            self?.selectMonthView()
                         }else{
-                            self?.lblMonthlyPurchasedStatus.text = "Buy"
+                            DispatchQueue.main.async {
+                                self?.lblMonthlyPurchasedStatus.text = "Buy"
+                            }
+                            
+                            
                         }
                     }
                     
@@ -91,11 +113,21 @@ class SelectPlanViewController: UIViewController {
                     if (pro.productIdentifier == RazeFaceProducts.YearlyIAP){
 //                        let price : String = SelectPlanViewController.priceFormatter.string(from: pro.price)!
                         let price : String = self!.priceStringForProduct(item: pro) ?? "0.0"
-                        self?.lblYearlyPrice.text = price
+                        DispatchQueue.main.async {
+                            self?.lblOneTimePrice.text = price
+                        }
+                        
                         if RazeFaceProducts.store.isProductPurchased(pro.productIdentifier) {
-                            self?.lblSave10Percent.text = "Purchased"
+                            DispatchQueue.main.async {
+                                self?.lblOneTimePurchasedSucessfully.text = "Purchased"
+                            }
+                            
+                            self?.selectYearView()
                         }else{
-                            self?.lblSave10Percent.text = "Buy"
+                            DispatchQueue.main.async {
+                                self?.lblOneTimePurchasedSucessfully.text = "Buy"
+                            }
+                            
                         }
                     }
                     
@@ -164,14 +196,29 @@ class SelectPlanViewController: UIViewController {
     //MARK:-  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lblDailyBudget.text = "\u{2022} Live for today with your daily budget"
+        lblMinutesGetstarted.text = "\u{2022} It takes just minutes to get started"
+        lblSafeData.text = "\u{2022} Your data kept safe and secure on your device"
+        lblFinancialDecision.text = "\u{2022} A simple,powerful,rewarding way to track your financial decisions"
         // Do any additional setup after loading the view.
     }
 
     override func viewDidLayoutSubviews() {
         Singleton.sharedSingleton.setCornerRadius(view: viewYearly, radius: 5.0)
         Singleton.sharedSingleton.setCornerRadius(view: btnFreeFor30Days, radius: btnFreeFor30Days.frame.size.height / 2)
-        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
+        
+        if (selectedPlan == 1){
+            selectMonthView()
+        }else{
+            selectYearView()
+        }
+//        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
+//        viewMonthly.layer.borderColor = UIColor.darkGray.cgColor
+//        viewMonthly.layer.borderWidth = 2.0
+//
+//        Singleton.sharedSingleton.setCornerRadius(view: viewOneTime, radius: 5.0)
+//        viewOneTime.layer.borderColor = UIColor.darkGray.cgColor
+//        viewOneTime.layer.borderWidth = 2.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -215,16 +262,32 @@ class SelectPlanViewController: UIViewController {
     }
     
     func selectMonthView() {
-            viewMonthly.layer.borderWidth = 7.0
-            viewMonthly.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
-            viewYearly.layer.borderWidth = 0.0
-            viewYearly.layer.borderColor = UIColor.clear.cgColor
+        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
+        viewMonthly.layer.borderColor = UIColor.darkGray.cgColor
+        viewMonthly.layer.borderWidth = 2.0
+        
+        Singleton.sharedSingleton.setCornerRadius(view: viewOneTime, radius: 5.0)
+        viewOneTime.layer.borderColor = UIColor.clear.cgColor
+        viewOneTime.layer.borderWidth = 2.0
+        
+//            viewMonthly.layer.borderWidth = 7.0
+//            viewMonthly.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
+//            viewYearly.layer.borderWidth = 0.0
+//            viewYearly.layer.borderColor = UIColor.clear.cgColor
     }
     func selectYearView() {
-        viewYearly.layer.borderWidth = 7.0
-        viewYearly.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
-        viewMonthly.layer.borderWidth = 0.0
+//        viewOneTime.layer.borderWidth = 7.0
+//        viewOneTime.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
+//        viewMonthly.layer.borderWidth = 0.0
+//        viewMonthly.layer.borderColor = UIColor.clear.cgColor
+        
+        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
         viewMonthly.layer.borderColor = UIColor.clear.cgColor
+        viewMonthly.layer.borderWidth = 2.0
+        
+        Singleton.sharedSingleton.setCornerRadius(view: viewOneTime, radius: 5.0)
+        viewOneTime.layer.borderColor = UIColor.darkGray.cgColor
+        viewOneTime.layer.borderWidth = 2.0
     }
     
     @IBAction func btnMonthlyPayPressed(_ sender: Any) {

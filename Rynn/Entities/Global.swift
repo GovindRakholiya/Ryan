@@ -22,8 +22,10 @@ class Global {
     
     
     //MARK: - API BASE URL
-
-    static let baseURLPath = "http://13.127.235.254/dev/laravel/ryan/public/api/"
+//    http://thebuildappserver.com/ryan/public/login
+//     static let baseURLPath = "http://13.235.225.118/dev/laravel/ryan/public/api/"
+    static let baseURLPath = "http://thebuildappserver.com/ryan/public/api/"
+//    static let baseURLPath = "http://13.127.235.254/dev/laravel/ryan/public/api/"
 //    static let baseURLPath = "http://18.224.168.149/ryan/public/api/"
     
     static let userId : String = UserDefaults.standard.value(forKey: Global.g_UserDefaultKey.User_Id) as! String

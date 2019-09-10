@@ -42,7 +42,7 @@
                         <constraint firstAttribute="height" constant="40" id="Pe9-sb-9US"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
-                    <state key="normal" title="LOGIN">
+                    <state key="normal" title="Go To Login Screen">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

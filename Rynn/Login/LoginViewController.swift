@@ -67,11 +67,14 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDelegat
                                 return
                             }
                         }
-                        let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
-
-                        selctPlanVC.isBackButtonNeeded = false
-
-                        self.navigationController?.pushViewController(selctPlanVC, animated: false)
+                        DispatchQueue.main.async {
+                            let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+                            
+                            selctPlanVC.isBackButtonNeeded = false
+                            
+                            self.navigationController?.pushViewController(selctPlanVC, animated: false)
+                        }
+                       
 
                     }else{
                         let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
@@ -162,18 +165,24 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDelegat
                                         return
                                     }
                                 }
-                                let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+                                DispatchQueue.main.async {
+                                    let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+                                    
+                                    selctPlanVC.isBackButtonNeeded = false
+                                    
+                                    self.navigationController?.pushViewController(selctPlanVC, animated: false)
+                                }
                                 
-                                selctPlanVC.isBackButtonNeeded = false
-                                
-                                self.navigationController?.pushViewController(selctPlanVC, animated: false)
                                 
                             }else{
-                                let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+                                DispatchQueue.main.async {
+                                    let selctPlanVC : SelectPlanViewController = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+                                    
+                                    selctPlanVC.isBackButtonNeeded = false
+                                    
+                                    self.navigationController?.pushViewController(selctPlanVC, animated: false)
+                                }
                                 
-                                selctPlanVC.isBackButtonNeeded = false
-                                
-                                self.navigationController?.pushViewController(selctPlanVC, animated: false)
                             }
                             
                         }
