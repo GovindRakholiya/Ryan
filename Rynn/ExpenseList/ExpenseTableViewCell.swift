@@ -24,6 +24,10 @@ class ExpenseTableViewCell: UITableViewCell {
         btnExpenseType.layer.borderWidth = 1.0
         btnExpenseType.layer.borderColor = UIColor.darkGray.cgColor
         
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         // Initialization code
     }
 

@@ -1264,7 +1264,7 @@
 				INFOPLIST_FILE = "BUILD copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 13.0;
+				MARKETING_VERSION = 24.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rynnn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1287,7 +1287,7 @@
 				INFOPLIST_FILE = "BUILD copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 13.0;
+				MARKETING_VERSION = 24.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rynnn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

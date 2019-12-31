@@ -65,6 +65,11 @@ class MyAccountViewController: UIViewController,MFMailComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         if let userName = Singleton.sharedSingleton.retriveFromUserDefaults(key: Global.g_UserDefaultKey.User_Name){
             if (userName == "A"){
                 txtUserName.text = ""
@@ -126,9 +131,12 @@ class MyAccountViewController: UIViewController,MFMailComposeViewControllerDeleg
     }
     
     @IBAction func btnChooseYourPlanPressed(_ sender: Any) {
-        let planVC = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
-        planVC.isBackButtonNeeded = true
-        self.navigationController?.pushViewController(planVC, animated: false)
+        DispatchQueue.main.async{
+            let planVC = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+            planVC.isBackButtonNeeded = true
+            self.navigationController?.pushViewController(planVC, animated: false)
+        }
+        
     }
     
     func getDBFromServer() {

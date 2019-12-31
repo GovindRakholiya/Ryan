@@ -43,6 +43,12 @@
 	<string>The Build App</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string
+        
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

@@ -26,6 +26,10 @@ class EarningListViewController: UIViewController,UITableViewDataSource,UITableV
         let nib = UINib(nibName: "ExpenseTableViewCell", bundle: nil)
         tblEarnings.register(nib, forCellReuseIdentifier: "ExpenseTableViewCell")
         
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         responseArray = DBManager.shared.loadExpense()
         expenseArray = [expense]()
         earnedArray = [expense]()

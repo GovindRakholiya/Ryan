@@ -163,8 +163,11 @@ class Singleton: NSObject {
     
     //MARK: - Corner Radius:
     func setCornerRadius(view:UIView, radius:CGFloat) {
-        view.layer.cornerRadius = radius
-        view.clipsToBounds = true
+        DispatchQueue.main.async {
+            view.layer.cornerRadius = radius
+                   view.clipsToBounds = true
+        }
+       
     }
     
     

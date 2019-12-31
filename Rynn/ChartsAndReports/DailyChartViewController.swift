@@ -26,6 +26,10 @@ class DailyChartViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet weak var viewDate: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         setDatePicker()
         showTableViewAccordingSelectedDate()
         // Do any additional setup after loading the view.

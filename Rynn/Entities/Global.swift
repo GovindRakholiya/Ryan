@@ -102,6 +102,8 @@ class Global {
     }
     
     // MARK: -  Shared classes
+    
+    
     static let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     static let singleton = Singleton.sharedSingleton
 

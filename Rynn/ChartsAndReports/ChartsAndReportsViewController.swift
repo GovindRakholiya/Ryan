@@ -53,6 +53,10 @@ class ChartsAndReportsViewController: UIViewController {
     var currentIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         DisplayData()
        setDatePicker()
         

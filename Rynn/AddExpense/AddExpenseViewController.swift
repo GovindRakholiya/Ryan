@@ -53,6 +53,9 @@ class AddExpenseViewController: UIViewController,selectCategoryDelegate,UITextFi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
         
        txtDate.text = Date().string(format: "MM-dd-yyyy")
         selectedDateForExpenseOrEarning = Date ()

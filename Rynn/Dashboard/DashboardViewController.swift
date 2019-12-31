@@ -38,6 +38,11 @@ class DashboardViewController: UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Yes")
+        
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         DBManager.shared.copyDatabase()
         
         Singleton.sharedSingleton.setCornerRadius(view: viewTop, radius: 5.0)

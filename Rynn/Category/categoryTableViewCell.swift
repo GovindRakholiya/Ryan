@@ -13,6 +13,9 @@ class categoryTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCategoryName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
         // Initialization code
     }
 

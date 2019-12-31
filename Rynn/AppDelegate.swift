@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SWRevealViewControllerDele
             UserDefaults.standard.set(1, forKey: "FIRSTTIME")
             
         }
+        
        
         IQKeyboardManager.shared.enable = true
         
@@ -103,44 +104,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SWRevealViewControllerDele
     func  ConfigureTabbarAgent(animated:Bool) -> Void {
         self.gotoDetailAppAgent(0)
         //Singleton.sharedSingleton.saveToUserDefaults(value: "true", forKey: Global.kLoggedInUserKey.IsAddAddress)
-        self.navigation?.pushViewController(self.tabBarController!, animated: animated)
+        DispatchQueue.main.async {
+            self.navigation?.pushViewController(self.tabBarController!, animated: animated)
+
+        }
     }
     
     func gotoDetailAppAgent(_ pintTabId: Int) {
         self.setTabBarForAgent()
-        self.tabBarController?.delegate = self
-        self.tabBarController?.selectedIndex = pintTabId
-        self.tabBarController?.selectTab(pintTabId)
+        DispatchQueue.main.async {
+            self.tabBarController?.delegate = self
+            self.tabBarController?.selectedIndex = pintTabId
+            self.tabBarController?.selectTab(pintTabId)
+        }
+        
     }
     
     func setTabBarForAgent() {
         
        
+        DispatchQueue.main.async {
+            self.tabBarController = UITabBarCustom()
+            // first
+            self.DashboardObj = DashboardViewController(nibName: "DashboardViewController", bundle: nil)
+            let navDashboard    = UINavigationController(rootViewController: self.DashboardObj!)
+            
+            //second
+            self.ExpenseListObj = ExpenseListViewController(nibName: "ExpenseListViewController", bundle: nil)
+            let navExpense = UINavigationController(rootViewController: self.ExpenseListObj!)
+            
+            //Third
+            
+            self.ExpenseListOtherObj = EarningListViewController(nibName: "EarningListViewController", bundle: nil)
+            let navExpenseOther = UINavigationController(rootViewController: self.ExpenseListOtherObj!)
+            //forth
+            self.myAccountObj = MyAccountViewController(nibName: "MyAccountViewController", bundle: nil)
+            let navMyAccount = UINavigationController(rootViewController: self.myAccountObj!)
+            
+            
+            
+            self.tabBarController?.viewControllers = [navDashboard,navExpense,navExpenseOther,navMyAccount]
+            navDashboard.isNavigationBarHidden = true
+            navExpense.isNavigationBarHidden = true
+            navExpenseOther.isNavigationBarHidden = true
+            navMyAccount.isNavigationBarHidden = true
+        }
         
-        self.tabBarController = UITabBarCustom()
-        // first
-        DashboardObj = DashboardViewController(nibName: "DashboardViewController", bundle: nil)
-        let navDashboard    = UINavigationController(rootViewController: DashboardObj!)
-        
-        //second
-        ExpenseListObj = ExpenseListViewController(nibName: "ExpenseListViewController", bundle: nil)
-        let navExpense = UINavigationController(rootViewController: ExpenseListObj!)
-        
-        //Third
-        
-        ExpenseListOtherObj = EarningListViewController(nibName: "EarningListViewController", bundle: nil)
-        let navExpenseOther = UINavigationController(rootViewController: ExpenseListOtherObj!)
-        //forth
-        myAccountObj = MyAccountViewController(nibName: "MyAccountViewController", bundle: nil)
-        let navMyAccount = UINavigationController(rootViewController: myAccountObj!)
-        
-        
-        
-        self.tabBarController?.viewControllers = [navDashboard,navExpense,navExpenseOther,navMyAccount]
-        navDashboard.isNavigationBarHidden = true
-        navExpense.isNavigationBarHidden = true
-        navExpenseOther.isNavigationBarHidden = true
-        navMyAccount.isNavigationBarHidden = true
         
     }
     

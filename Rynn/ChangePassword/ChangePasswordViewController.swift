@@ -14,7 +14,10 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var txtNewPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
         // Do any additional setup after loading the view.
     }
 

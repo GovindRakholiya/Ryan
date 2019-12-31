@@ -196,10 +196,16 @@ class SelectPlanViewController: UIViewController {
     //MARK:-  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblDailyBudget.text = "\u{2022} Live for today with your daily budget"
-        lblMinutesGetstarted.text = "\u{2022} It takes just minutes to get started"
-        lblSafeData.text = "\u{2022} Your data kept safe and secure on your device"
-        lblFinancialDecision.text = "\u{2022} A simple,powerful,rewarding way to track your financial decisions"
+//        lblDailyBudget.text = "\u{2022} Live for today with your daily budget"
+        lblDailyBudget.text = "If you want to be bombarded by reminders, annoyed by account syncing errors, and share all your personal data with a large corporation, you are in the wrong spot!"
+        lblMinutesGetstarted.text = "Our Promise"
+        lblSafeData.text = "You experience positive financial change by using the app daily for 1 month. If not, let us know and we donate the profit to charity."
+//        lblFinancialDecision.text = "\u{2022} A simple,powerful,rewarding way to track your financial decisions"
+        lblFinancialDecision.text = ""
+        
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -207,11 +213,14 @@ class SelectPlanViewController: UIViewController {
         Singleton.sharedSingleton.setCornerRadius(view: viewYearly, radius: 5.0)
         Singleton.sharedSingleton.setCornerRadius(view: btnFreeFor30Days, radius: btnFreeFor30Days.frame.size.height / 2)
         
-        if (selectedPlan == 1){
-            selectMonthView()
-        }else{
-            selectYearView()
+        if (btnBack.isHidden == true){
+            if (selectedPlan == 1){
+                selectMonthView()
+            }else{
+                selectYearView()
+            }
         }
+        
 //        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
 //        viewMonthly.layer.borderColor = UIColor.darkGray.cgColor
 //        viewMonthly.layer.borderWidth = 2.0
@@ -222,30 +231,16 @@ class SelectPlanViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if (isBackButtonNeeded == true){
-            btnBack.isHidden = false
-        }else{
-            btnBack.isHidden = true
+        
+        DispatchQueue.main.async {
+            if (self.isBackButtonNeeded == true){
+                self.btnBack.isHidden = false
+            }else{
+                self.btnBack.isHidden = true
+                self.selectNormalView()
+            }
         }
-//        let subscriptionExpiryDate = Singleton.sharedSingleton.retriveFromUserDefaults(key: Global.g_UserDefaultKey.subscription_expiry_date)
-//
-//        lblPlanExpiryDate.text = " Your Subscription Expiry Date is \(String(describing: subscriptionExpiryDate!))"
-//        if (subscriptionExpiryDate != ""){
-//            let ExpiryDate : Date = self.convertStringToDate(dateFromAPI: subscriptionExpiryDate ?? "2000-01-01")
-//            if (ExpiryDate > Date()){
-//                btnFreeFor30Days.isEnabled = true
-//                btnFreeFor30Days.setTitle("    USE YOUR FREE PLAN    ", for: .normal)
-//            }else if (ExpiryDate <= Date()){
-//                btnFreeFor30Days.isEnabled = false
-//                btnFreeFor30Days.setTitle("    PLAN IS EXPIRED     ", for: .normal)
-//            }
-//        }else{
-//            btnFreeFor30Days.isEnabled = true
-//            btnFreeFor30Days.setTitle("     TRY FOR 30 DAYS     ", for: .normal)
-//        }
-        
-        
-       
+      
     }
     
     
@@ -262,38 +257,55 @@ class SelectPlanViewController: UIViewController {
     }
     
     func selectMonthView() {
-        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
-        viewMonthly.layer.borderColor = UIColor.darkGray.cgColor
-        viewMonthly.layer.borderWidth = 2.0
         
-        Singleton.sharedSingleton.setCornerRadius(view: viewOneTime, radius: 5.0)
-        viewOneTime.layer.borderColor = UIColor.clear.cgColor
-        viewOneTime.layer.borderWidth = 2.0
+        DispatchQueue.main.async {
+            Singleton.sharedSingleton.setCornerRadius(view: self.viewMonthly, radius: 5.0)
+            self.viewMonthly.layer.borderColor = UIColor.darkGray.cgColor
+            self.viewMonthly.layer.borderWidth = 2.0
+            
+            Singleton.sharedSingleton.setCornerRadius(view: self.viewOneTime, radius: 5.0)
+            self.viewOneTime.layer.borderColor = UIColor.clear.cgColor
+            self.viewOneTime.layer.borderWidth = 2.0
+        }
         
-//            viewMonthly.layer.borderWidth = 7.0
-//            viewMonthly.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
-//            viewYearly.layer.borderWidth = 0.0
-//            viewYearly.layer.borderColor = UIColor.clear.cgColor
+        
+
     }
     func selectYearView() {
-//        viewOneTime.layer.borderWidth = 7.0
-//        viewOneTime.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
-//        viewMonthly.layer.borderWidth = 0.0
-//        viewMonthly.layer.borderColor = UIColor.clear.cgColor
+
+        DispatchQueue.main.async {
+            Singleton.sharedSingleton.setCornerRadius(view: self.viewMonthly, radius: 5.0)
+            self.viewMonthly.layer.borderColor = UIColor.clear.cgColor
+            self.viewMonthly.layer.borderWidth = 2.0
+            
+            Singleton.sharedSingleton.setCornerRadius(view: self.viewOneTime, radius: 5.0)
+            self.viewOneTime.layer.borderColor = UIColor.darkGray.cgColor
+            self.viewOneTime.layer.borderWidth = 2.0
+        }
         
-        Singleton.sharedSingleton.setCornerRadius(view: viewMonthly, radius: 5.0)
-        viewMonthly.layer.borderColor = UIColor.clear.cgColor
-        viewMonthly.layer.borderWidth = 2.0
+    }
+    
+    
+    func selectNormalView() {
+        DispatchQueue.main.async {
+            Singleton.sharedSingleton.setCornerRadius(view: self.viewMonthly, radius: 5.0)
+            self.viewMonthly.layer.borderColor = UIColor.clear.cgColor
+            self.viewMonthly.layer.borderWidth = 2.0
+            
+            Singleton.sharedSingleton.setCornerRadius(view: self.viewOneTime, radius: 5.0)
+            self.viewOneTime.layer.borderColor = UIColor.clear.cgColor
+            self.viewOneTime.layer.borderWidth = 2.0
+        }
         
-        Singleton.sharedSingleton.setCornerRadius(view: viewOneTime, radius: 5.0)
-        viewOneTime.layer.borderColor = UIColor.darkGray.cgColor
-        viewOneTime.layer.borderWidth = 2.0
     }
     
     @IBAction func btnMonthlyPayPressed(_ sender: Any) {
         
         selectedPlan = 1
-        selectMonthView()
+        DispatchQueue.main.async {
+            self.selectMonthView()
+        }
+        
         
         
         
@@ -317,27 +329,9 @@ class SelectPlanViewController: UIViewController {
     }
     @IBAction func btnYearlyPayPressed(_ sender: Any) {
         selectedPlan = 2
-        selectYearView()
-        
-        
-        
-//        let subscriptionExpiryDate = Singleton.sharedSingleton.retriveFromUserDefaults(key: Global.g_UserDefaultKey.subscription_expiry_date)
-//
-//        let ExpiryDate : Date = self.convertStringToDate(dateFromAPI: subscriptionExpiryDate ?? "2000-01-01")
-//        if (ExpiryDate > Date()){
-//            Singleton.sharedSingleton.showSuccessAlert(withMsg: "You are using Free Trial Please press button Of Free Trial and enjoy Free Trial")
-//        }else{
-//            if (Singleton.sharedSingleton.retriveFromUserDefaults(key: Global.g_UserDefaultKey.is_free) == "1"){
-//                for pro in productsArray {
-//                    if (pro.productIdentifier == RazeFaceProducts.YearlyIAP){
-//                        RazeFaceProducts.store.buyProduct(pro)
-//                    }
-//                }
-//            }else{
-//                subscribeFreePlan()
-//            }
-//        }
-        
+        DispatchQueue.main.async {
+            self.selectYearView()
+        }
        
         
     }

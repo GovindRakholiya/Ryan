@@ -98,6 +98,10 @@ class BarChartReportViewController: UIViewController,ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         viewBottom.layer.cornerRadius = 5.0
         Singleton.sharedSingleton.setShadow(to: viewBottom)
         

@@ -16,6 +16,10 @@ class DailyExpenseTableViewCell: UITableViewCell {
     @IBOutlet weak var insideView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         Singleton.sharedSingleton.setCornerRadius(view: insideView, radius: 5.0)
 //        Singleton.sharedSingleton.setShadow(to: insideView)
         // Initialization code

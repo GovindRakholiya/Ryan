@@ -30,6 +30,10 @@ class RecurrenceCycleViewController: UIViewController,UITableViewDataSource,UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         let nib = UINib(nibName: "categoryTableViewCell", bundle: nil)
         tblRecurrenceSelection.register(nib, forCellReuseIdentifier: "categoryTableViewCell")
         

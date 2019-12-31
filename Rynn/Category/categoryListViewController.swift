@@ -25,6 +25,9 @@ class categoryListViewController: UIViewController,UITableViewDataSource,UITable
     var selectedCategoryName : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
         viewAddCategoryOptions.layer.cornerRadius = 1.0
         viewAddCategoryOptions.layer.borderWidth = 1.0
         viewAddCategoryOptions.layer.borderColor = UIColor.black.cgColor
